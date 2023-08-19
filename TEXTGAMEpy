@@ -1,0 +1,80 @@
+from TEXTGAMECLASSESFUNCTIONS import stor
+import os
+N=0
+E=0
+S=0
+W=0
+frsttime=0
+#this works at this point i can move arond pick stuff up and move back i would just have to take ages writing the story and i don't feel like it
+    
+dire=""
+HEALTH=10
+ITEMS=[]
+quit=0
+stor(N,E,S,W)
+print("You suddenly find yourself alone in the lower decks of the station. \nYou seem to of been knocked unconcious by a metal beam which collapsed onto you.")
+print("To the north there is a cracked station control screen, It seems you are in the station's MONITORING&CONTROL point\nTo the east there is a row of lockers\To the south is a locked reinforced door\nTo the west is the way to the armoury")
+while quit==0:
+    if HEALTH==10:
+        hp="full"
+    choice=(input(f"1.OPTIONS \n\n\n (ORENTERCHOICE)\n"))#this works at this point i can move arond pick stuff up and move back i would just have to take ages writing the story and i don't feel like it
+     
+    while isinstance(choice,int)==False:
+        print("Wrong")
+        choice=(input(f"1.OPTIONS \n\n\n (ORENTERCHOICE)\n"))
+
+    if choice==1: 
+         print("2.CHECKITEMS\n3.MOVE\n4.")
+    elif choice ==2:
+        print(ITEMS)
+    elif choice==3:
+        dire  = str(input("Enter N for north E for east S for south W for west: "))
+        dire = dire.upper()
+        if dire == "N":
+            N=N+1
+            S=S-1
+            frsttime=frsttime+1
+
+            stor(N,E,S,W)
+        elif dire =="E":
+            E=E+1
+            W=W-1
+            stor(N,E,S,W)
+        elif dire =="S":
+            S=S+1
+            N=N-1
+            stor(N,E,S,W)
+        elif dire =="W":
+            W=W+1
+            E=E-1
+            stor(N,E,S,W)
+        else:
+            print("INPUT INVALID")
+            stor(N,E,S,W)
+
+
+             
+   
+        
+            
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
